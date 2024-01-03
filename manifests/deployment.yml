@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: schunditetrisgameapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schunditetrisgameapp
+  template:
+    metadata:
+      labels:
+        app: schunditetrisgameapp 
+    spec:
+      containers:
+        - name: schunditetrisgameapp 
+          image: tetrisapptest1.azurecr.io/schunditetrisgameapp
+          ports:
+          - containerPort: 80
